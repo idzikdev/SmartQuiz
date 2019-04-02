@@ -13,7 +13,6 @@ import pl.idzikdev.SmartQuiz.services.QuestionService;
 
 import java.util.logging.Logger;
 
-@RequestMapping("/")
 @Controller
 public class HomeController {
     @Autowired
@@ -28,7 +27,7 @@ public class HomeController {
                 .build();
         System.out.println(question);
         service.saveQuestion(question);
-        model.addAttribute("info","tekst");
+        model.addAttribute("pytanko","tekst");
         return "index";
     }
 }

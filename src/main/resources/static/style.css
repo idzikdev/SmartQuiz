@@ -1,0 +1,18 @@
+.figure{
+    width: 100px;
+    height: 100%;
+    padding: 0px;
+    background: #ffffff;
+    overflow: hidden;
+}
+img{
+    width: 20%;
+    height: 20%;
+}
+.rotate img {
+    transform:  rotate(0) scale(1);
+    transition: .6s ease-in-out;
+}
+.rotate img:hover {
+    transform: rotate(17deg) scale(1.0);
+}

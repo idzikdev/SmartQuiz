@@ -21,4 +21,14 @@ public class Question {
     private Category category;
     @Column(name = "question")
     private String question;
+    @Column(name = "a")
+    private String answerA;
+    @Column(name = "b")
+    private String answerB;
+    @Column(name = "c")
+    private String answerC;
+    @Column(name = "d")
+    private String answerD;
+    @Column(name = "valid")
+    private String valid;
 }
