@@ -11,6 +11,7 @@ import pl.idzikdev.SmartQuiz.models.Category;
 import pl.idzikdev.SmartQuiz.models.Question;
 import pl.idzikdev.SmartQuiz.services.QuestionService;
 
+import java.util.List;
 import java.util.logging.Logger;
 
 @Controller
@@ -20,14 +21,13 @@ public class HomeController {
 
     @GetMapping("/index")
     public String saveTestQuestion(Model model){
-        Question question=new Question()
-                .builder()
-                .category(Category.INFORMATYKA)
-                .question("Pytanko")
-                .build();
-        System.out.println(question);
-        service.saveQuestion(question);
         model.addAttribute("pytanko","tekst");
         return "index";
+    }
+    @GetMapping("/questions")
+    public String getAllQuestions(Model model){
+        List<Question> questions=service.findAllByCategory(Category.FIZYKA);
+        model.addAttribute("questions",questions);
+        return "questions";
     }
 }

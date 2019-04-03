@@ -6,19 +6,15 @@ import pl.idzikdev.SmartQuiz.models.Category;
 import pl.idzikdev.SmartQuiz.models.Question;
 import pl.idzikdev.SmartQuiz.repositories.QuestionRepository;
 
-import java.util.ArrayList;
 import java.util.List;
 
+//@PropertySource(value="classpath:sql.properties")
 @Service
-public class QuestionService {
+public class SystemService {
     @Autowired
     QuestionRepository repository;
 
-    public void saveQuestion(Question question){
-        repository.save(question);
-    }
-
-    public List<Question> findAllByCategory(Category category){
-        return repository.findAllByCategory(category);
+    public void insertQuery(){
+//        questionList.forEach(q->repository.save(q));
     }
 }
