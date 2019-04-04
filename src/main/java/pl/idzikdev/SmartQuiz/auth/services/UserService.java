@@ -8,6 +8,7 @@ import pl.idzikdev.SmartQuiz.auth.entities.UserEntity;
 import pl.idzikdev.SmartQuiz.auth.forms.LoginForm;
 import pl.idzikdev.SmartQuiz.auth.forms.RegisterForm;
 import pl.idzikdev.SmartQuiz.auth.repositories.UserRepository;
+import pl.idzikdev.SmartQuiz.models.UserDto;
 
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceContextType;
@@ -64,6 +65,12 @@ public class UserService {
 
     private boolean isLoginFree(String login) {
         return !userRepository.existsByLogin(login);
+    }
+
+    public UserDto getUserDto(){
+        UserEntity user=userSession.getUserEntity();
+        UserDto userDto=new UserDto(user.getLogin(),user.getRole(),user.getScore());
+        return userDto;
     }
 
     @Bean

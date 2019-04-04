@@ -20,4 +20,8 @@ public class UserEntity {
     private String email;
     @Column(name = "role")
     private String role;
+    @Column(name = "score")
+    private int score;
+    @Column(name = "number")
+    private int number;
 }

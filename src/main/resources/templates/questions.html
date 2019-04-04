@@ -2,7 +2,9 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>All Questions</title>
+    <link th:href="@{/lista.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/table.css}" rel="stylesheet" type="text/css">
 </head>
 <body>
 <table class="table">
@@ -32,6 +34,6 @@
     </tr>
     </tbody>
 </table>
-<a href="/auth/logout">Wyloguj</a>
+<ul th:replace="fragments/main::main-links"></ul>
 </body>
 </html>

@@ -14,7 +14,7 @@ public class SystemService {
     @Autowired
     QuestionRepository repository;
 
-    public void insertQuery(){
+    public void random(){
 //        questionList.forEach(q->repository.save(q));
     }
 }

@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head>
     <meta charset="UTF-8">
-    <title>Top secret page</title>
+    <title>Main page</title>
+    <link th:href="@{/lista.css}" rel="stylesheet" type="text/css">
 </head>
 <body>
 HELLO - TOP SECRET
 <br>
-<a href="/auth/logout">Wyloguj</a>
+<ul th:replace="fragments/main::main-links"></ul>
 </body>
 </html>

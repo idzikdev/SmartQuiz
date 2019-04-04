@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Random Question</title>
+    <link th:href="@{/lista.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/table.css}" rel="stylesheet" type="text/css">
+</head>
+<body>
+<form action="/submitQuestion" method="post">
+    <!--<p th:text="${id}"></p>-->
+    <!--<p th:text="${login}"></p>-->
+    <!--<p th:text="${role}"></p>-->
+    <!--<p th:text="${score}"></p>-->
+<table class="table" border="1">
+    <thead>
+    <tr>
+        <td th:text="${question.question}" colspan="2"></td>
+        <!--<td type="hidden" name="id" th:value="${question.id}"></td>-->
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><input type="radio" name="answer" value="a" th:text="${question.answerA}" checked="checked"></td>
+        <td><input type="radio" name="answer" value="b" th:text="${question.answerB}"></td>
+    </tr>
+    <tr>
+        <td><input type="radio" name="answer" value="c" th:text="${question.answerC}"></td>
+        <td><input type="radio" name="answer" value="d" th:text="${question.answerD}"></td>
+    </tr>
+    <tr>
+        <!--<td>To pytanie jest warte 1 punkt</td>-->
+        <td><input type="hidden" name="id" th:value="${question.id}">To pytanie jest warte 1 punkt</td>
+        <td><input type="submit" value="Zatwierdź"></td>
+    </tr>
+    </tbody>
+</table>
+</form>
+<p th:text="${result}"></p>
+<!--<table class="table">-->
+    <!--<thead>-->
+    <!--<tr>-->
+        <!--<td>Id</td>-->
+        <!--<td>Category</td>-->
+        <!--<td>Question</td>-->
+        <!--<td>Answer A</td>-->
+        <!--<td>Answer B</td>-->
+        <!--<td>Answer C</td>-->
+        <!--<td>Answer D</td>-->
+        <!--<td>Valid</td>-->
+    <!--</tr>-->
+    <!--</thead>-->
+    <!--<tbody>-->
+    <!--<tr>-->
+        <!--<td th:text="${question.id}"></td>-->
+        <!--<td th:text="${question.category}"></td>-->
+        <!--<td th:text="${question.question}"></td>-->
+        <!--<td th:text="${question.answerA}"></td>-->
+        <!--<td th:text="${question.answerB}"></td>-->
+        <!--<td th:text="${question.answerC}"></td>-->
+        <!--<td th:text="${question.answerD}"></td>-->
+        <!--<td th:text="${question.valid}"></td>-->
+    <!--</tr>-->
+    <!--</tbody>-->
+<!--</table>-->
+<ul th:replace="fragments/main::main-links"></ul>
+</body>
+</html>
