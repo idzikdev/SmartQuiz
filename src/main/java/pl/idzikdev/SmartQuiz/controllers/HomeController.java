@@ -31,7 +31,7 @@ public class HomeController {
         return "questions";
     }
 
-    @GetMapping("/randomQuestion")
+    @GetMapping(value = "/randomQuestion")
     public String getRandomQuestion(Model model){
         Question question=service.getRandomQuestions();
         model.addAttribute("question",question);
