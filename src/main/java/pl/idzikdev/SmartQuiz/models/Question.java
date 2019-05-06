@@ -18,7 +18,7 @@ public class Question {
     @Column(name = "id")
     private int id;
     @Column(name = "category")
-    private Category category;
+    private int category;
     @Column(name = "question")
     private String question;
     @Column(name = "a")

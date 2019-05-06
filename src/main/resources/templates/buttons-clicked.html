@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Summary</title>
+    <link th:href="@{/lista.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/table.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/buttons.css}" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div>
+    <th:block th:text="${result}"></th:block>
+
+</div>
+<ul th:replace="fragments/main::main-links"></ul>
+</body>
+</html>

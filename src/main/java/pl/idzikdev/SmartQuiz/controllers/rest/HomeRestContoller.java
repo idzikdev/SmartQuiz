@@ -21,7 +21,7 @@ public class HomeRestContoller {
 
     @GetMapping(value = "/questionRest", produces = "application/json")
     public ResponseEntity<List<Question>> getAllQuestions() {
-        List<Question> questions = service.findAllByCategory(Category.FIZYKA);
+        List<Question> questions = service.findAllByCategory(0);
         if (questions == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } else

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Random Question</title>
+    <link th:href="@{/lista.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/table.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/buttons.css}" rel="stylesheet" type="text/css">
+</head>
+<body>
+<form action="/submitButtons" method="post">
+    <div class="table-responsive">
+        <table class="table" border="1">
+            <tbody>
+            <tr>
+                <td th:text="${question.question}"></td>
+                <td><input type="hidden" name="id" th:value="${question.id}">To pytanie jest warte 1 punkt</td>
+            </tr>
+            <tr>
+                <td><input type = "submit" class="save_button" name = "button1" th:value="${question.answerA}" /></td>
+                <td><input type = "submit" class="save_button" name = "button2" th:value="${question.answerB}" /></td>
+            </tr>
+            <tr>
+                <td><input type = "submit" class="save_button" name = "button3" th:value="${question.answerC}" /></td>
+                <td><input type = "submit" class="save_button" name = "button4" th:value="${question.answerD}" /></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</form>
+<table>
+    <tbody>
+    <tr>
+
+    </tr>
+    </tbody>
+</table>
+<ul th:replace="fragments/main::main-links"></ul>
+</body>
+</html>

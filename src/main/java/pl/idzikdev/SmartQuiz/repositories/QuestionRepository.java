@@ -10,7 +10,7 @@ import java.util.List;
 public interface QuestionRepository extends JpaRepository<Question,Integer> {
         String queryAllByCategory="SELECT * FROM questions where category>?1";
         @Query(value=queryAllByCategory,nativeQuery = true)
-        List<Question> findAllByCategory(Category category);
+        List<Question> findAllByCategory(int category);
 
         String queryQuestionById="SELECT valid FROM questions where id=?1";
         @Query(value = queryQuestionById,nativeQuery = true)

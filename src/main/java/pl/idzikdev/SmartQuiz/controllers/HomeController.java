@@ -26,7 +26,7 @@ public class HomeController {
     }
     @GetMapping("/questions")
     public String getAllQuestions(Model model){
-        List<Question> questions=service.findAllByCategory(Category.FIZYKA);
+        List<Question> questions=service.findAllByCategory(0);
         model.addAttribute("questions",questions);
         return "questions";
     }

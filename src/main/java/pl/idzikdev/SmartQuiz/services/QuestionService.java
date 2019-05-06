@@ -18,12 +18,12 @@ public class QuestionService {
 //        repository.save(question);
 //    }
 
-    public List<Question> findAllByCategory(Category category){
+    public List<Question> findAllByCategory(int category){
         return repository.findAllByCategory(category);
     }
 
     public Question getRandomQuestions(){
-        List<Question> questions=findAllByCategory(Category.FIZYKA);
+        List<Question> questions=findAllByCategory(0);
         return questions.get((int)(Math.random()*questions.size()));
     }
 
