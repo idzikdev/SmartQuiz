@@ -31,6 +31,14 @@ public class HomeController {
         return "questions";
     }
 
+    @GetMapping("/buttons")
+    public String getButtons(Model model){
+        Question question=service.getRandomQuestions();
+        model.addAttribute("question",question);
+        System.out.println(question);
+        return "buttons-form";
+    }
+
     @GetMapping(value = "/randomQuestion")
     public String getRandomQuestion(Model model){
         Question question=service.getRandomQuestions();
